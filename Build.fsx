@@ -72,8 +72,8 @@ Target.create "Package" (fun _ ->
 
     let version = 
         match String.isNullOrWhiteSpace gitVersion.PreReleaseLabel with
-        | false -> sprintf "%s-beta-%s%s" gitVersion.MajorMinorPatch gitVersion.PreReleaseLabel gitVersion.BuildMetaDataPadded
-        | _ -> sprintf "%s-beta" gitVersion.MajorMinorPatch
+        | false -> sprintf "%s-%s%s" gitVersion.MajorMinorPatch gitVersion.PreReleaseLabel gitVersion.BuildMetaDataPadded
+        | _ -> sprintf "%s" gitVersion.MajorMinorPatch
 
     NuGet.NuGetPack (fun p -> { p with
                                   Version = version
