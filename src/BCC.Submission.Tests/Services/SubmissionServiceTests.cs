@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using BCC.Core.Tests.Util;
 using BCC.Submission.Services;
+using BCC.Submission.Tests.Util;
 using Bogus;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
