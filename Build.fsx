@@ -67,7 +67,7 @@ Target.create "Package" (fun _ ->
     !! "Package.nuspec"
     |> Shell.copy "nuget"
 
-    Shell.copyRecursive "src/BCC.Core/bin/Release" "nuget/lib" false
+    Shell.copyRecursive "src/BCC.Submission/bin/Release" "nuget/tools" false
     |> ignore
 
     let version = 
