@@ -21,12 +21,12 @@ parsers:
       macro: no
 
 comment:
-  layout: "header, reach, diff, flags, files"
-  behavior: new
+  layout: "header, diff, files"
+  behavior: once
   require_changes: no
   
 fixes:
-  - "/C/projects/buildcrosscheck/::"
+  - "/C/projects/bcc-submission/::"
 
 ignore:
   - "*Tests/"
