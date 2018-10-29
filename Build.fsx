@@ -6,10 +6,8 @@ open Fake.BuildServer
 open Fake.IO.Globbing.Operators
 open Fake.DotNet
 open Fake.DotNet.NuGet
-open Fake.DotNet.Testing.XUnit2
 open Fake.Core
 open Fake.Tools
-open Fake.IO
 
 BuildServer.install [
     AppVeyor.Installer
@@ -47,18 +45,23 @@ Target.create "Build" (fun _ ->
 )
 
 Target.create "Test" (fun _ ->
-    let testHtmlReport = "reports/tests.html"
-    let testXmlReport = "reports/tests.html"
+    List.allPairs ["BCC.Submission.Tests"] ["net471" ; "netcoreapp2.1"]
+    |> Seq.iter (fun (proj, framework) -> 
+            let projectPath = sprintf "src\\%s\\%s.csproj" proj proj
+            let reportFile = sprintf "%s-%s.results.trx" proj framework
 
-    let configuration = (fun p -> { p with
-                                      HtmlOutputPath = Some testHtmlReport
-                                      XmlOutputPath = Some testXmlReport})
+            let configuration: (DotNet.TestOptions -> DotNet.TestOptions)
+                = (fun t -> {t with
+                               Configuration = DotNet.BuildConfiguration.Release
+                               NoBuild = true
+                               Framework = Some framework
+                               Logger = Some (sprintf "trx;LogFileName=%s" reportFile)
+                               ResultsDirectory = Some "../../reports"})
 
-    !! "src/**/bin/Release/net471/*Tests.dll"
-    |> Fake.DotNet.Testing.XUnit2.run configuration
-
-    Trace.publish ImportData.BuildArtifact testHtmlReport
-    Trace.publish ImportData.BuildArtifact testXmlReport
+            DotNet.test configuration projectPath
+            
+            Trace.publish ImportData.BuildArtifact (sprintf "reports/%s" reportFile)
+    )
 )
 
 Target.create "Package" (fun _ ->
