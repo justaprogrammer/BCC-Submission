@@ -74,6 +74,15 @@ NUGET
       System.Xml.XPath (>= 4.3)
       System.Xml.XPath.XDocument (>= 4.3)
       System.Xml.XPath.XmlDocument (>= 4.3)
+    Fake.DotNet.Cli (5.9.3)
+      Fake.Core.Environment (>= 5.9.3)
+      Fake.Core.Process (>= 5.9.3)
+      Fake.Core.String (>= 5.9.3)
+      Fake.Core.Trace (>= 5.9.3)
+      Fake.DotNet.MSBuild (>= 5.9.3)
+      Fake.IO.FileSystem (>= 5.9.3)
+      FSharp.Core (>= 4.3.4)
+      Newtonsoft.Json (>= 11.0.2)
     Fake.DotNet.MSBuild (5.9.3)
       BlackFox.VsWhere (>= 0.3.1)
       Fake.Core.Environment (>= 5.9.3)
@@ -95,13 +104,6 @@ NUGET
       FSharp.Core (>= 4.3.4)
       Newtonsoft.Json (>= 11.0.2)
       System.Net.Http (>= 4.3.4)
-    Fake.DotNet.Testing.XUnit2 (5.9.3)
-      Fake.Core.Process (>= 5.9.3)
-      Fake.Core.String (>= 5.9.3)
-      Fake.Core.Trace (>= 5.9.3)
-      Fake.IO.FileSystem (>= 5.9.3)
-      Fake.Testing.Common (>= 5.9.3)
-      FSharp.Core (>= 4.3.4)
     Fake.IO.FileSystem (5.9.3)
       Fake.Core.String (>= 5.9.3)
       FSharp.Core (>= 4.3.4)
@@ -111,9 +113,6 @@ NUGET
       Fake.Core.Trace (>= 5.9.3)
       FSharp.Core (>= 4.3.4)
       System.Net.Http (>= 4.3.4)
-    Fake.Testing.Common (5.9.3)
-      Fake.Core.Trace (>= 5.9.3)
-      FSharp.Core (>= 4.3.4)
     Fake.Tools.GitVersion (5.9.3)
       Fake.Core.Environment (>= 5.9.3)
       Fake.Core.Process (>= 5.9.3)
@@ -707,7 +706,6 @@ STORAGE: PACKAGES
 NUGET
   remote: https://www.nuget.org/api/v2
     NuGet.CommandLine (4.7.1)
-    xunit.runner.console (2.4)
 
 GROUP groupref FakeBuildResources
 
