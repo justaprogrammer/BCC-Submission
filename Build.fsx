@@ -19,8 +19,13 @@ let isAppveyor = AppVeyor.detect()
 let gitVersion = GitVersion.generateProperties id
 
 Target.create "Clean" (fun _ ->
-  ["reports" ; "nuget" ; "src/common"]
-  |> Shell.cleanDirs
+  ["reports" ; "src/common" ; "nuget/tools"]
+  |> Seq.iter Directory.delete
+
+  !! "nuget/*"
+  -- "nuget/*.txt"
+  -- "nuget/*.nuspec"
+  |> File.deleteAll
 
   let configuration = 
     (fun p -> { p with 
@@ -62,11 +67,6 @@ Target.create "Test" (fun _ ->
 )
 
 Target.create "Package" (fun _ ->
-    Shell.mkdir "nuget"
-    
-    !! "Package.nuspec"
-    |> Shell.copy "nuget"
-
     Shell.copyRecursive "src/BCC.Submission/bin/Release" "nuget/tools" false
     |> ignore
 
