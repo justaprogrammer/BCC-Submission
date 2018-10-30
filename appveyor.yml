@@ -9,33 +9,5 @@ before_build:
   - ps: gitversion /output buildserver 
 build_script:
 - ps: >-
-    fake run Build.fsx
+    fake run Build.fsx -p 3
 test: off
-deploy:
-- provider: NuGet
-  artifact: /.*\.nupkg/
-  api_key:
-    secure: dsO76Gkjz0FIjFDUQgSK5k04J5Kx+tBfpUVPA/YNOcvQN8dzfLfuoT+qmu4ezU2c
-  on:
-    branch: master
-    appveyor_repo_tag: true
-- provider: NuGet
-  artifact: /.*\.nupkg/
-  server: https://chocolatey.org
-  api_key:
-    secure: WZYV1tc0xOaBu8I7KqifSysQu+E9nhtlodRlCwCXCiEGFYELc0evoeUBQc2y4iZq
-  on:
-    branch: master
-    appveyor_repo_tag: true
-- provider: GitHub
-  tag: $(APPVEYOR_REPO_TAG_NAME)
-  release: BCC-Submission v$(GitVersion_SemVer)
-  description: 'BCC-Submission v$(GitVersion_SemVer)'
-  auth_token:
-    secure: 8wLI8hf2W3L/V5BUk/tdGDs+gWryh9Y8HxCQk9iq48xV/n+hxShodChwuHAm2DsS
-  artifact: /.*\.nupkg/
-  draft: false
-  prerelease: false
-  on:
-    branch: master
-    appveyor_repo_tag: true
