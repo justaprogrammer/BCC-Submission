@@ -11,5 +11,6 @@
     <description>BuildCrossCheck Submission Tool</description>
     <copyright>Copyright 2018</copyright>
     <dependencies />
+    <tags>BuildCrossCheck GitHub CheckRun BuildTool</tags>
   </metadata>
 </package>
