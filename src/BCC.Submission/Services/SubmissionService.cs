@@ -39,6 +39,8 @@ namespace BCC.Submission.Services
             var restResponse = await _restClient.ExecutePostTaskAsync(request)
                 .ConfigureAwait(false);
 
+            Console.WriteLine("Response: {0}", restResponse.StatusCode.ToString());
+
             return restResponse.StatusCode == HttpStatusCode.OK;
         }
     }

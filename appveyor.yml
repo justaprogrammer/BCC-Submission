@@ -9,5 +9,5 @@ before_build:
   - ps: gitversion /output buildserver 
 build_script:
 - ps: >-
-    fake run Build.fsx -p 3
+    fake run Build.fsx
 test: off
