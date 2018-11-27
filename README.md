@@ -11,8 +11,8 @@
 BCC-Submission is a Windows tool to submit data to [Build Cross Check](https://github.com/justaprogrammer/BuildCrossCheck).
 
 ## Documentation
-You can find the documentation [here](docs/readme.md).
-You can find the full documentation for Build Cross Check [here](https://github.com/justaprogrammer/BuildCrossCheck/blob/master/docs/readme.md).
+- [Documentation](docs/readme.md)
+- [BuildCrossCheck Documentation](https://github.com/justaprogrammer/BuildCrossCheck/blob/master/docs/readme.md)
 
 ## Licenses
 - This source is distributed under under the AGPL.
