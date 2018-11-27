@@ -5,8 +5,10 @@
 
 #### BCC-Submission
 [![NuGet](http://img.shields.io/nuget/v/bcc-submission.svg)](https://www.nuget.org/packages/bcc-submission)
+[![Chocolatey](https://img.shields.io/chocolatey/v/bcc-submission.svg)](https://chocolatey.org/packages/BCC-Submission)
 
 ## Overview
+BCC-Submission is a Windows tool to submit data to [Build Cross Check](https://github.com/justaprogrammer/BuildCrossCheck).
 
 ## Documentation
 You can find the documentation [here](docs/readme.md).
