@@ -7,6 +7,10 @@
     <owners>StanleyGoldman, profet, zippy1981</owners>
     <licenseUrl>https://www.gnu.org/licenses/agpl-3.0.en.html</licenseUrl>
     <projectUrl>https://github.com/justaprogrammer/BCC-Submission</projectUrl>
+    <projectSourceUrl>https://github.com/justaprogrammer/BCC-Submission</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/justaprogrammer/BCC-Submission/issues</bugTrackerUrl>
+    <mailingListUrl>https://github.com/justaprogrammer/BCC-Submission/issues</mailingListUrl>
+    <docsUrl>https://github.com/justaprogrammer/BCC-Submission/blob/master/docs/usage.md</docsUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>BuildCrossCheck Submission Tool</description>
     <copyright>Copyright 2018</copyright>
